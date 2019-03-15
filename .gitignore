@@ -1,0 +1,5 @@
+
+# Folders containing one or more files that Git wouldn't stage
+bin
+obj
+Server
