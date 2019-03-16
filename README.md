@@ -24,3 +24,20 @@ Sample Output
 **Screen Capture of Successful Output**
 
 Screenshot viewable [here](https://www.screencast.com/t/6zgk8ZRs).
+
+## Challenge 2: Leap Year Calculator
+
+**Problem Statement**
+Given a year, report if it is a leap year.
+
+Note that a leap year in the Gregorian calendar occurs:
+
+on every year that is evenly divisible by 4
+  except every year that is evenly divisible by 100
+    unless the year is also evenly divisible by 400
+
+For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.
+
+**Screen Capture of Successful Output**
+
+See screenshot [here](https://www.screencast.com/t/4eaal1Sd).
