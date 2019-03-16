@@ -9,10 +9,10 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            ScoreGame();
+            //ScoreGame();
 
             // Call method for challenge 2
-            CalculateLeapYear();
+            //CalculateLeapYear();
 
             // Call method for challenge 3
             TestForPerfectSequence();
@@ -109,10 +109,11 @@ namespace _401_prework_code_challenges
 
             string userInput = Console.ReadLine();
             Console.WriteLine($"userInput: {userInput}");
-            Console.WriteLine(userInput.Split(","));
+            Console.WriteLine($"user.Input.Split: {userInput.Split(",")}");
 
             string[] stringArray = userInput.Split(",");
-            Console.WriteLine($"stringArray's value: {stringArray}");
+            Console.WriteLine($"stringArray[1]: {stringArray[1]}"); // What is type is coming back from this?
+            Console.WriteLine($"int parsed at index 1: {int.Parse(stringArray[1])}");
 
             int[] intArray = new int[] { }; // Declare empty array; is this correct way?
             Console.WriteLine($"intArray's value: {intArray}");
@@ -147,6 +148,8 @@ namespace _401_prework_code_challenges
         }
 
         // Solution for challenge 4
+
+
 
     }
 }
