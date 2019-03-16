@@ -12,6 +12,7 @@ namespace _401_prework_code_challenges
             ScoreGame();
 
             // Call method for challenge 2
+            CalculateLeapYear();
 
             // Call method for challenge 3
 
@@ -22,7 +23,6 @@ namespace _401_prework_code_challenges
         }
 
         // Solution for challenge 1
-
         private static void ComputeScore(int[] chosenArray, int chosenNumber)
         {
 
@@ -71,6 +71,33 @@ namespace _401_prework_code_challenges
         }
 
         // Solution for challenge 2
+        private static void CalculateLeapYear()
+        {
+            Console.WriteLine("Enter a year to see if it's a leap year.");
+
+            string userGuess = Console.ReadLine();
+
+            int userGuessToInt = int.Parse(userGuess);
+
+            if (userGuessToInt % 4 == 0)
+            {
+                if (userGuessToInt % 100 == 0)
+                {
+                    if (userGuessToInt % 400 == 0)
+                    {
+                        Console.WriteLine("The year you entered is a leap year!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The year you entered isn't a leap year.");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("The year you entered isn't a leap year.");
+            }
+        }
 
         // Solution for challenge 3
 
