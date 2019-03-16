@@ -9,12 +9,13 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            ScoreGame();
+            //ScoreGame();
 
             // Call method for challenge 2
             CalculateLeapYear();
 
             // Call method for challenge 3
+            //TestForPerfectSequence();
 
             // Call method for challenge 4
 
@@ -54,6 +55,7 @@ namespace _401_prework_code_challenges
 
             // Arrayify the five numbers
             string[] stringArray = userNumbers.Split(",");
+            // Console.WriteLine($"stringArray: {stringArray}");
 
             int[] arrayifiedNumbers = new int[5];
 
@@ -92,6 +94,10 @@ namespace _401_prework_code_challenges
                         Console.WriteLine("The year you entered isn't a leap year.");
                     }
                 }
+                else
+                {
+                    Console.WriteLine("The year you entered is a leap year!");
+                }
             }
             else
             {
@@ -100,8 +106,54 @@ namespace _401_prework_code_challenges
         }
 
         // Solution for challenge 3
+        private static void TestForPerfectSequence()
+        {
+            Console.WriteLine("Enter a list of non-negative integers numbers to see if they are a perfect sequence. " +
+                "(The numbers must be separated by commas with no spaces in between.)");
+
+            string userInput = Console.ReadLine();
+            Console.WriteLine($"userInput: {userInput}");
+            Console.WriteLine($"user.Input.Split: {userInput.Split(",")}");
+
+            string[] stringArray = userInput.Split(",");
+            Console.WriteLine($"stringArray[1]: {stringArray[1]}"); // What is type is coming back from this?
+            Console.WriteLine($"int parsed at index 1: {int.Parse(stringArray[1])}");
+
+            int[] intArray = new int[] { }; // Declare empty array; is this correct way?
+            Console.WriteLine($"intArray's value: {intArray}");
+            Console.ReadLine();
+
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                intArray[i] = int.Parse(stringArray[i]);
+            }
+            Console.WriteLine($"intArray: {intArray}");
+
+            int productOfElements = 1;
+            int sumOfElements = 0;
+
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                productOfElements *= intArray[i];
+                sumOfElements += intArray[i];
+            }
+
+            Console.WriteLine($"productOfElements is now {productOfElements}");
+            Console.WriteLine($"sumOfElements is now {sumOfElements}");
+
+            if (productOfElements == sumOfElements)
+            {
+                Console.WriteLine("The numbers you entered are a perfect sequence!");
+            }
+            else
+            {
+                Console.WriteLine("The numbers you entered are not a perfect sequence.");
+            }
+        }
 
         // Solution for challenge 4
+
+
 
     }
 }
