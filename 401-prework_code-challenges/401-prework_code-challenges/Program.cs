@@ -17,6 +17,7 @@ namespace _401_prework_code_challenges
             // Call method for challenge 3
 
             // Call method for challenge 4
+            getSumOfRows();
 
             Console.ReadLine();
 
@@ -102,6 +103,44 @@ namespace _401_prework_code_challenges
         // Solution for challenge 3
 
         // Solution for challenge 4
+        private static void getSumOfRows()
+        {
+            Console.WriteLine("Let's create a multidimensional array and sum its rows!");
 
+            // Get number for m dimension of matrix from user
+            Console.WriteLine("Enter a positive integer for the number of rows you want in the array.");
+            string mDimensionAsString = Console.ReadLine();
+            int mDimensionAsInt = int.Parse(mDimensionAsString);
+            Console.WriteLine($"Thanks! You entered {mDimensionAsInt}");
+
+            // Get number for n dimension of matrix from user
+            Console.WriteLine("Enter a positive integer for the number of columns you want in the array.");
+            string nDimensionAsString = Console.ReadLine();
+            int nDimensionAsInt = int.Parse(nDimensionAsString);
+            Console.WriteLine($"Thanks! You entered {nDimensionAsInt}");
+
+            // Declare array based on dimensions input by user
+            int[,] userArray = new int[mDimensionAsInt, nDimensionAsInt];
+
+            // Generate random numbers to populate matrix
+            Random newRandNum = new Random();
+            for (int i = 0; i < userArray.Rank; i++)
+            {
+                for (int j = 0; j < userArray.GetLength(i); j++)
+                {
+                    userArray[][] = newRandNum;
+                }
+            }
+
+            // Take initialized matrix and sum its rows
+            sumRows(userArray);
+        
+        }
+
+        // Helper function that takes array as param and sums row(s)
+        private static void sumRows(int[,] array)
+        {
+
+        }
     }
 }
