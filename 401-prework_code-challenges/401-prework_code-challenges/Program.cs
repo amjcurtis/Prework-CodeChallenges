@@ -9,12 +9,13 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            ScoreGame();
+            //ScoreGame();
 
             // Call method for challenge 2
-            CalculateLeapYear();
+            //CalculateLeapYear();
 
             // Call method for challenge 3
+            TestForPerfectSequence();
 
             // Call method for challenge 4
 
@@ -100,6 +101,53 @@ namespace _401_prework_code_challenges
         }
 
         // Solution for challenge 3
+        private static void TestForPerfectSequence()
+        {
+            Console.WriteLine("Enter a list of non-negative integers numbers to see if they are a perfect sequence. " +
+                "(The numbers must be separated by commas with no spaces in between.)");
+
+            string userInput = Console.ReadLine();
+
+            string[] stringArray = userInput.Split(",");
+
+
+            int[] intArray = new int[] { };
+            // Convert user input to list then convert to array (workaround for declaring empty array)
+            // var listOfStrings = new List<string>();
+            // int[] intArray = listOfStrings.ToArray();
+
+            Console.WriteLine($"intArray's value: {intArray}");
+            Console.ReadLine();
+
+            for (var i = 0; i < stringArray.Length; i++)
+            {
+                intArray[i] = int.Parse(stringArray[i]);
+            }
+
+            Console.WriteLine($"intArray: {intArray}");
+
+            int productOfElements = 1;
+            int sumOfElements = 0;
+
+            for (var i = 0; i < intArray.Length; i++)
+            {
+                productOfElements *= intArray[i];
+                sumOfElements += intArray[i];
+            }
+
+            Console.WriteLine($"productOfElements is now {productOfElements}");
+            Console.WriteLine($"sumOfElements is now {sumOfElements}");
+
+            if (productOfElements == sumOfElements)
+            {
+                Console.WriteLine("The numbers you entered are a perfect sequence!");
+            }
+            else
+            {
+                Console.WriteLine("The numbers you entered are not a perfect sequence.");
+            }
+        }
+
 
         // Solution for challenge 4
 
