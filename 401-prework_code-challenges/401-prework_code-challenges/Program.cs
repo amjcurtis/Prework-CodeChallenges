@@ -9,7 +9,7 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            ScoreGame();
+            //ScoreGame();
 
             // Call method for challenge 2
             CalculateLeapYear();
