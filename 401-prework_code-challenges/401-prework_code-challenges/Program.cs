@@ -9,10 +9,10 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            //ScoreGame();
+            ScoreGame();
 
             // Call method for challenge 2
-            //CalculateLeapYear();
+            CalculateLeapYear();
 
             // Call method for challenge 3
             TestForPerfectSequence();
@@ -55,6 +55,7 @@ namespace _401_prework_code_challenges
 
             // Arrayify the five numbers
             string[] stringArray = userNumbers.Split(",");
+            // Console.WriteLine($"stringArray: {stringArray}");
 
             int[] arrayifiedNumbers = new int[5];
 
@@ -107,29 +108,26 @@ namespace _401_prework_code_challenges
                 "(The numbers must be separated by commas with no spaces in between.)");
 
             string userInput = Console.ReadLine();
+            Console.WriteLine($"userInput: {userInput}");
+            Console.WriteLine(userInput.Split(","));
 
             string[] stringArray = userInput.Split(",");
+            Console.WriteLine($"stringArray's value: {stringArray}");
 
-
-            int[] intArray = new int[] { };
-            // Convert user input to list then convert to array (workaround for declaring empty array)
-            // var listOfStrings = new List<string>();
-            // int[] intArray = listOfStrings.ToArray();
-
+            int[] intArray = new int[] { }; // Declare empty array; is this correct way?
             Console.WriteLine($"intArray's value: {intArray}");
             Console.ReadLine();
 
-            for (var i = 0; i < stringArray.Length; i++)
+            for (int i = 0; i < stringArray.Length; i++)
             {
                 intArray[i] = int.Parse(stringArray[i]);
             }
-
             Console.WriteLine($"intArray: {intArray}");
 
             int productOfElements = 1;
             int sumOfElements = 0;
 
-            for (var i = 0; i < intArray.Length; i++)
+            for (int i = 0; i < intArray.Length; i++)
             {
                 productOfElements *= intArray[i];
                 sumOfElements += intArray[i];
@@ -147,7 +145,6 @@ namespace _401_prework_code_challenges
                 Console.WriteLine("The numbers you entered are not a perfect sequence.");
             }
         }
-
 
         // Solution for challenge 4
 
