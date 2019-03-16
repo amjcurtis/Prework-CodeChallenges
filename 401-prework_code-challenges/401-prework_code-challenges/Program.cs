@@ -9,10 +9,11 @@ namespace _401_prework_code_challenges
             Console.WriteLine("Welcome to the 401 prework code challenges!");
 
             // Call method for challenge 1
-            // ScoreGame();
+            ScoreGame();
 
             // Call method for challenge 2
-           // CalculateLeapYear();
+            CalculateLeapYear();
+
             // Call method for challenge 3
 
             // Call method for challenge 4
@@ -20,7 +21,7 @@ namespace _401_prework_code_challenges
             Console.ReadLine();
 
         }
-        
+
         // Solution for challenge 1
         private static void ComputeScore(int[] chosenArray, int chosenNumber)
         {
@@ -91,12 +92,11 @@ namespace _401_prework_code_challenges
                         Console.WriteLine("The year you entered isn't a leap year.");
                     }
                 }
-            } else
+            }
+            else
             {
                 Console.WriteLine("The year you entered isn't a leap year.");
             }
-
-            Console.ReadLine();
         }
 
         // Solution for challenge 3
