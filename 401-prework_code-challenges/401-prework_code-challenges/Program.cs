@@ -7,6 +7,7 @@ namespace _401_prework_code_challenges
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the 401 prework code challenges!");
+            Console.WriteLine(" ");
 
             // Call method for challenge 1
             ScoreGame();
@@ -15,15 +16,19 @@ namespace _401_prework_code_challenges
             CalculateLeapYear();
 
             // Call method for challenge 3
+            TestForPerfectSequence();
 
             // Call method for challenge 4
-            getSumOfRows();
+            GetSumOfRows();
 
             Console.ReadLine();
-
         }
 
+        
+        ///////////////////////////////////////
         // Solution for challenge 1
+        ///////////////////////////////////////
+        
         private static void ComputeScore(int[] chosenArray, int chosenNumber)
         {
 
@@ -55,6 +60,7 @@ namespace _401_prework_code_challenges
 
             // Arrayify the five numbers
             string[] stringArray = userNumbers.Split(",");
+            // Console.WriteLine($"stringArray: {stringArray}");
 
             int[] arrayifiedNumbers = new int[5];
 
@@ -69,9 +75,15 @@ namespace _401_prework_code_challenges
             int numberChoice = int.Parse(Console.ReadLine());
 
             ComputeScore(arrayifiedNumbers, numberChoice);
+
+            Console.WriteLine(" ");
         }
 
+
+        ///////////////////////////////////////
         // Solution for challenge 2
+        ///////////////////////////////////////
+        
         private static void CalculateLeapYear()
         {
             Console.WriteLine("Enter a year to see if it's a leap year.");
@@ -93,54 +105,117 @@ namespace _401_prework_code_challenges
                         Console.WriteLine("The year you entered isn't a leap year.");
                     }
                 }
+                else
+                {
+                    Console.WriteLine("The year you entered is a leap year!");
+                }
             }
             else
             {
                 Console.WriteLine("The year you entered isn't a leap year.");
             }
+            Console.WriteLine(" ");
         }
 
-        // Solution for challenge 3
 
+        ///////////////////////////////////////
+        // Solution for challenge 3
+        ///////////////////////////////////////
+        private static void TestForPerfectSequence()
+        {
+            Console.WriteLine("Enter a list of non-negative integers to see if they are a perfect sequence. " + 
+                "(The numbers must be separated by commas with no spaces in between.)");
+
+            // Get user input
+            string userInput = Console.ReadLine();
+
+            // Turn user input into a string array
+            string[] stringArray = userInput.Split(",");
+            
+            // Declare empty integer array of length of user's string array
+            int[] intArray = new int[stringArray.Length]; 
+
+            // Populate integer array with numbers from user's string array (after converting them from strings to ints)
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                intArray[i] = int.Parse(stringArray[i]);
+            }
+
+            // Set counters
+            int productOfElements = 1;
+            int sumOfElements = 0;
+
+            // Calculate product and sum of array elements
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                productOfElements *= intArray[i];
+                sumOfElements += intArray[i];
+            }
+
+            // Test for perfect sequence
+            if (productOfElements == sumOfElements)
+            {
+                Console.WriteLine("The numbers you entered are a perfect sequence!");
+            } else
+            {
+                Console.WriteLine("The numbers you entered are not a perfect sequence.");
+            }
+
+            Console.WriteLine(" ");
+        }
+
+
+        ///////////////////////////////////////
         // Solution for challenge 4
-        private static void getSumOfRows()
+        ///////////////////////////////////////
+
+        private static void GetSumOfRows()
         {
             Console.WriteLine("Let's create a multidimensional array and sum its rows!");
 
-            // Get number for m dimension of matrix from user
+            // Get number for m (row) dimension of matrix from user
             Console.WriteLine("Enter a positive integer for the number of rows you want in the array.");
             string mDimensionAsString = Console.ReadLine();
             int mDimensionAsInt = int.Parse(mDimensionAsString);
             Console.WriteLine($"Thanks! You entered {mDimensionAsInt}");
+            Console.WriteLine($" ");
 
-            // Get number for n dimension of matrix from user
+            // Get number for n (column) dimension of matrix from user
             Console.WriteLine("Enter a positive integer for the number of columns you want in the array.");
             string nDimensionAsString = Console.ReadLine();
             int nDimensionAsInt = int.Parse(nDimensionAsString);
             Console.WriteLine($"Thanks! You entered {nDimensionAsInt}");
+            Console.WriteLine($" ");
 
-            // Declare array based on dimensions input by user
+            // Declare empty array based on dimensions input by user
             int[,] userArray = new int[mDimensionAsInt, nDimensionAsInt];
 
-            // Generate random numbers to populate matrix
+            // Populate matrix with random numbers
             Random newRandNum = new Random();
-            for (int i = 0; i < userArray.Rank; i++)
+            for (int i = 0; i < userArray.GetLength(0); i++)
             {
-                for (int j = 0; j < userArray.GetLength(i); j++)
+                for (int j = 0; j < userArray.GetLength(1); j++)
                 {
-                    userArray[][] = newRandNum;
+                    userArray[i, j] = newRandNum.Next(1,10);
                 }
             }
 
             // Take initialized matrix and sum its rows
             sumRows(userArray);
-        
         }
 
         // Helper function that takes array as param and sums row(s)
         private static void sumRows(int[,] array)
         {
-
+            int total = 0;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    total += array[i, j];
+                }
+            }
+            Console.WriteLine($"The sum of all the elements in your multidimensional array is {total}");
         }
     }
 }
