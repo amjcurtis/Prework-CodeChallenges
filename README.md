@@ -94,4 +94,4 @@ Sample Output
 
 **Screen Capture of Successful Output**
 
-See screenshot [here]().
+See screenshot [here](https://www.screencast.com/t/5Eg2UbkiwoCb).
