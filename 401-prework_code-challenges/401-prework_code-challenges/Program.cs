@@ -10,7 +10,7 @@ namespace _401_prework_code_challenges
             Console.WriteLine(" ");
 
             // Call method for challenge 1
-            ScoreGame();
+            //ScoreGame();
 
             // Call method for challenge 2
             CalculateLeapYear();
@@ -121,6 +121,7 @@ namespace _401_prework_code_challenges
         ///////////////////////////////////////
         // Solution for challenge 3
         ///////////////////////////////////////
+
         private static void TestForPerfectSequence()
         {
             Console.WriteLine("Enter a list of non-negative integers to see if they are a perfect sequence. " + 
