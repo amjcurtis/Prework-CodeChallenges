@@ -196,7 +196,7 @@ namespace _401_prework_code_challenges
             {
                 for (int j = 0; j < userArray.GetLength(1); j++)
                 {
-                    userArray[i, j] = newRandNum.Next(1,10);
+                    userArray[i, j] = newRandNum.Next(1, 100);
                 }
             }
 
@@ -207,15 +207,23 @@ namespace _401_prework_code_challenges
         // Helper function that takes array as param and sums row(s)
         private static void sumRows(int[,] array)
         {
-            int total = 0;
+            // Declare empty array to hold row totals
+            int[] rowTotalArray = new int[array.GetLength(0)];
+
+            // Sum elements in each row
             for (int i = 0; i < array.GetLength(0); i++)
             {
+                int total = 0;
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     total += array[i, j];
                 }
+
+                // Add row total as new element in array of row totals
+                rowTotalArray[i] = total;
             }
-            Console.WriteLine($"The sum of all the elements in your multidimensional array is {total}");
+            Console.WriteLine($"Here are the sums of the elements in each row of the multidimensional array:");
+            Console.WriteLine("[{0}]", string.Join(",", rowTotalArray));
         }
     }
 }
