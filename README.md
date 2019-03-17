@@ -2,6 +2,7 @@
 
 Code challenges for Code 401 prework at Code Fellows
 
+
 ## Challenge 1: Array Max Result
 
 **Problem Statement**
@@ -25,6 +26,7 @@ Sample Output
 
 Screenshot viewable [here](https://www.screencast.com/t/6zgk8ZRs).
 
+
 ## Challenge 2: Leap Year Calculator
 
 **Problem Statement**
@@ -41,6 +43,7 @@ For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 
 **Screen Capture of Successful Output**
 
 See screenshot [here](https://www.screencast.com/t/4eaal1Sd).
+
 
 ## Challenge 3: Perfect Sequence
 
@@ -61,6 +64,33 @@ An array of integers (may not be sorted).
 
 **Explanation**
 1 * 3 * 2 = 6 && 1 + 3 + 2 = 6
+
+**Screen Capture of Successful Output**
+
+See screenshot [here](https://www.screencast.com/t/gC0xqQoYt).
+
+
+## Challenge 4: Sum of Rows of Multidimensional Array
+
+**Problem Statement**
+Given a matrix of integers, return the sum of each row in a single dimensional array.
+
+**Input Format**
+A multidimensional array with the dimensions of m x n (m = rows, n = columns).
+
+* Duplicate integers are possible.
+* Negative numbers are possible.
+* Both m and n can vary in length.
+* The user should specify the length and the width of the array within the console. The array of the dimensions specified by the user is then populated with randomly generated numbers.
+
+The method should take in the multidimensional array and return the single dimensional array with the sums.
+
+Sample Input
+`int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };`
+^^ The actual input would just be myArray, but the above code shows the pre-initialization before the method is called.
+
+Sample Output
+`{15,40,65}` <-- an integer array
 
 **Screen Capture of Successful Output**
 
